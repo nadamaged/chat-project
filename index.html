@@ -236,31 +236,19 @@
         document.getElementById("input").value += e;
       }
 
-      var names = [
-        "nada","Nada",
-        "farah","Farah",
-        "hussien","Hussien",
-        "soliman","Soliman",
-        "seka","Seka",
-        "nagwa","Nagwa",
-        "abdelwehab","Abdelwehab",
-      ];
-
-      var colors = ["yellow", "pink", "purple", "blue", "yellow", "black", "red"];
-      var password = ["000" , "111" , "222" , "333" , "444" ,"555" , "666" , "777"];
-
+      var names = ["nada", "farah", "nagwa"];
+      var passwords = ["1234", "2468", "1357" ];
+      var colors = ["yellow", "red", "green"];
       var name = "";
       var color = "";
-      var password = "";
-
       function takename() {
         let nameval = document.getElementById("name").value;
-        if (names.includes(nameval)) {
+        let passval = document.getElementById("password").value;
+        if (names.includes(nameval) && names.indexOf(nameval) == passwords.indexOf(passval)) {
           name = nameval;
           color = colors[names.indexOf(name)];
-
           document.getElementById("con").style.display = "none";
-          document.getElementById("form").style.display = "flex";
+          document.getElementById("form").style.display = "block";
         }
       }
 
